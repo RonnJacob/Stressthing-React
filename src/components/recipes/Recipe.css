@@ -1,0 +1,31 @@
+.middle-div {
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden
+}
+
+.full-width {
+    width: 100%;
+}
+
+.no-input-border {
+    border-width: 0px;
+    color: red
+}
+
+.hand-cursor{
+    cursor: pointer;
+    color: black
+}
+
+
+.endorsed-theader{
+    padding-left: 15px;
+}
+
+.wd-bottom-right {
+    color: #CB3B3B;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}

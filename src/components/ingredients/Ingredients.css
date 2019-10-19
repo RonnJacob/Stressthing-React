@@ -1,0 +1,29 @@
+.actions-theader {
+    width: 100px;
+    height: 50px;
+    overflow-x: hidden
+}
+#table-ingredients{
+    overflow-x: hidden;
+}
+.name-theader {
+    width: 100px;
+    height: 50px;
+    overflow-x: hidden
+}
+
+.middle-div {
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden
+}
+
+.full-width {
+    width: 100%;
+}
+
+.no-input-border {
+    border-width: 0px;
+    color: red
+}
+

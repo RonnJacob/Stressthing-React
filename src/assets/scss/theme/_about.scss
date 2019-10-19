@@ -1,0 +1,59 @@
+/* =================================== */
+/*  About Page Styles
+/* =================================== */
+
+
+/*-------- start services Style  -------------*/
+
+.single-service{
+  .thumb{
+    overflow: hidden;
+    img{
+      @include transition();
+      width:100%;
+    }
+  }
+  h4{
+    margin:20px 0;
+  }
+  &:hover{
+    h4{
+      color:$primary-color;
+    }
+    .thumb{
+        img{
+            transform:scale(1.1);
+        }
+      }
+    }
+    @media(max-width:991px){
+        margin-bottom:30px;
+    }
+}
+
+.groceries {
+  width: 80%;
+}
+
+//Learn to cook page (Menu)
+
+.learn-to-cook-wrapper {
+  ol {
+    li {
+      border-radius: 10px;
+      border-color: #eee;
+      width: 60%;
+      margin: auto;
+      margin-bottom: 20px;
+      padding: 20px;
+
+      img {
+        width: 175px;
+        height: 175px;
+      }
+    }
+  }
+}
+
+
+/*-------- end services Style  -------------*/

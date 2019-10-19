@@ -1,0 +1,29 @@
+.wbdv-navbar{
+    color:white;
+    font-weight: bolder;
+}
+
+#wbdv_main_menu{
+    border-bottom: none;
+    border-top: none;
+}
+
+
+#transparent-navbar{
+    background-color: transparent;
+}
+
+#transparent-navbar-guestnav{
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.white-nav{
+    color:white;
+}
+
+#white-nav{
+    color:white;
+    font-size: medium;
+    font-weight: bolder;
+    background-color: transparent;
+}

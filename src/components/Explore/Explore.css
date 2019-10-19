@@ -1,0 +1,37 @@
+.wrap {
+    width: 100%;
+    /*overflow:auto;*/
+}
+
+.fleft {
+    float:left;
+    width: 25%;
+    height: 400px;
+}
+
+.fright {
+    float: right;
+    height: 400px;
+    width: 75%;
+}
+
+.horizontal-li {
+    display:inline;
+    color: black;
+}
+
+.hover-underline:hover {
+    text-decoration: underline;
+}
+
+.horizontal-li:active {
+    color: orange;
+}
+
+.page-numbers {
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+    margin-top: 10px;
+    cursor: pointer;
+}

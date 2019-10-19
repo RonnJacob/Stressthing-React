@@ -1,0 +1,33 @@
+#login-page{
+    height:100%;
+}
+
+.section-gap{
+    height:100%;
+}
+
+.reservation-area .reservation-right .form-wrap .form-errors{
+    font-size: 13px;
+    font-weight: 300;
+    color: #999999;
+}
+
+.reservation-area .reservation-right .form-wrap .form-labels{
+    font-size: 13px;
+    font-weight: 300;
+    color: #999999;
+}
+
+.reservation-area .reservation-right .form-wrap .form-errors .form-error-icons{
+    color: #F47D41;
+}
+
+.reservation-area .reservation-right .form-wrap .form-control {
+    border-radius: 0px;
+    margin-bottom: 10px;
+    border-color: #eeeeee;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 0.575rem 0.75rem;
+    color: #999999;
+}
