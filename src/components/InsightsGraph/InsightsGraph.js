@@ -10,7 +10,6 @@ import { faExclamation } from '@fortawesome/free-solid-svg-icons'
 import {Redirect} from 'react-router-dom'
 import {setInStorage} from "../../utils/storage";
 import { LineChart, PieChart } from 'react-chartkick'
-import 'chart.js'
 import RegularUserServices from "../../services/RegularUserServices";
 
 
