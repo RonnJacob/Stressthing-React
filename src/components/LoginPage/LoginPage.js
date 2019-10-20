@@ -57,7 +57,7 @@ class LoginPage extends Component {
 
     render(){
         if(this.state.successfulLogin === true){
-            return <Redirect to={{pathname: '/home', state: { user: this.state.user}}}/>
+            return <Redirect to={{pathname: '/landingp', state: { user: this.state.user}}}/>
         }
         library.add(faExclamation);
         return (
