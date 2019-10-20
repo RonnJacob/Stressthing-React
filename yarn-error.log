@@ -1,0 +1,83 @@
+Arguments: 
+  /usr/local/Cellar/node/12.12.0/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js add react-chartkick chart.js--save
+
+PATH: 
+  /Users/ronn/.rvm/gems/ruby-2.4.1/bin:/Users/ronn/.rvm/gems/ruby-2.4.1@global/bin:/Users/ronn/.rvm/rubies/ruby-2.4.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/Cellar/node/11.5.0/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/ronn/.rvm/bin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  12.12.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/chart.js--save: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:66926:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:140564:22)
+      at Request.emit (events.js:210:5)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:141536:10)
+      at Request.emit (events.js:210:5)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:141458:12)
+      at Object.onceWrapper (events.js:299:28)
+      at IncomingMessage.emit (events.js:215:7)
+      at endReadableNT (_stream_readable.js:1183:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+    "name": "project-april",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@fortawesome/fontawesome-svg-core": "^1.2.17",
+      "@fortawesome/free-regular-svg-icons": "^5.8.1",
+      "@fortawesome/free-solid-svg-icons": "^5.8.1",
+      "@fortawesome/react-fontawesome": "^0.1.4",
+      "bootstrap": "^4.3.1",
+      "chroma-js": "^2.0.3",
+      "emotion": "^10.0.9",
+      "font-awesome.css": "^4.7.2",
+      "i": "^0.3.6",
+      "jquery": "^3.4.0",
+      "npm": "^6.9.0",
+      "plotly.js": "^1.50.1",
+      "prop-types": "^15.7.2",
+      "react": "^16.8.6",
+      "react-bootstrap": "^1.0.0-beta.8",
+      "react-dom": "^16.8.6",
+      "react-fontawesome": "^1.6.1",
+      "react-modal": "^3.8.1",
+      "react-plotly.js": "^2.4.0",
+      "react-router": "^5.0.0",
+      "react-router-dom": "^5.0.0",
+      "react-scripts": "2.1.8",
+      "react-select": "^2.4.3",
+      "react-tooltip": "^3.10.0",
+      "reactstrap": "^8.0.0",
+      "sweetalert2": "^8.8.7"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

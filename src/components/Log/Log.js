@@ -8,8 +8,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExclamation } from '@fortawesome/free-solid-svg-icons'
 import {Redirect} from 'react-router-dom'
+import {getFromStorage} from '../../utils/storage';
 import {setInStorage} from "../../utils/storage";
 import RegularUserServices from "../../services/RegularUserServices";
+import StresserServices from "../../services/StresserServices";
 
 
 const customStyles = {
@@ -44,9 +46,11 @@ const customStyles = {
 class Log extends React.Component{
     constructor(props){
         super(props);
+        const obj =  getFromStorage('project_april');
         this.state = {
             errors: [],
-            user: {},
+            user: obj.user[0],
+            userId: obj.user[0]._id,
             toHome: false,
             token: '',
             signInError: ''
@@ -54,6 +58,7 @@ class Log extends React.Component{
 {/*        this.userServices = new UserServices();
   */}
         this.regularUserServices = new RegularUserServices();
+        this.stresserServices = new StresserServices();
 {/*        this.chefServices = new ChefServices();
         this.nutritionistServices = new NutritionistServices();
   */}
@@ -96,6 +101,16 @@ class Log extends React.Component{
         });
     };
 
+    addStresser = () => {
+      var stresser = {};
+      stresser['cause'] = document.getElementById('stress-thing').value;
+      stresser['ownedBy'] = {'_id': this.state.userId};
+      console.log(stresser);
+      this.stresserServices.addStresser(stresser).then(res=> {
+        this.setState({signInError: stresser['cause']})
+      });
+    }
+
     render(){
 
         if(this.state.toHome === true){
@@ -132,6 +147,12 @@ class Log extends React.Component{
                         </div>
                         <div className="row justify-content-center">
                             <div className="col-6 justify-content-center">
+                                {(this.state.signInError) &&
+                                    <p className="form-errors">
+                                        <FontAwesomeIcon className="form-error-icons" icon="exclamation"/>
+                                        &nbsp;&nbsp;{this.state.signInError} has been added as a stresser.
+                                    </p>
+                                }
                                 <input type="text" className="form-control mb-4" style={{borderRadius:"20px"}}
                                        name="stress-thing" id="stress-thing"
                                        placeholder="add your StressThings one at a time, please!"
@@ -143,7 +164,7 @@ class Log extends React.Component{
                         </div>
                         <div className="row justify-content-center mt-5">
                             <a className="primary-btn m-20" style={{color: 'white'}}
-                               id="stressor-log" onClick={this.registerUser}>
+                               id="stressor-log" onClick={this.addStresser}>
                                Add StressThing
                             </a>
                         </div>

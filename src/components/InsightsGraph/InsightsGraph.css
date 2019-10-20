@@ -1,0 +1,107 @@
+#insights{
+    height:100%;
+}
+.reservation-area {
+    background: linear-gradient(#93E9BE,#ebf7f6) no-repeat center/cover;
+  {/* rgba(147,233,190,0.75); */}
+}
+.reservation-area .overlay-bg {
+    background: rgba(17, 22, 24, 0.75);
+}
+.reservation-area .reservation-right, .reservation-area .reservation-left {
+    position: relative;
+}
+.reservation-area .reservation-right .form-wrap {
+    background: #fff;
+    padding: 40px 40px;
+}
+.reservation-area .reservation-right .form-wrap .form-control {
+    border-radius: 0px;
+    margin-bottom: 10px;
+    border-color: #eeeeee;
+    font-size: 13px;
+    font-weight: 300;
+    padding: 0.575rem 0.75rem;
+    color: #999999;
+}
+
+.reservation-area .reservation-right .form-wrap .form-errors{
+    font-size: 13px;
+    font-weight: 300;
+    color: #999999;
+}
+
+.reservation-area .reservation-right .form-wrap .form-errors .form-error-icons{
+    color: #93E9BE;
+}
+
+.reservation-area .reservation-right .form-wrap .form-control:focus {
+    box-shadow: none;
+}
+.reservation-area .reservation-right .form-wrap .nice-select {
+    border: 1px solid #eeeeee;
+}
+.reservation-area .reservation-right .primary-btn {
+    text-transform: !important;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.reservation-area .reservation-right .primary-btn:hover {
+    box-shadow: -14.142px 14.142px 20px 0px rgba(147, 233, 190, 0.3);
+}
+.reservation-area .reservation-right .nice-select {
+    padding-left: 12px;
+    padding-right: 0px;
+}
+.reservation-area .reservation-right .nice-select .list {
+    border: 1px solid #eee;
+}
+.reservation-area .reservation-right .nice-select .list .option {
+    padding-left: 12px;
+}
+.reservation-area .reservation-right .sign-in {
+    font-weight: 600;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.reservation-area .reservation-right .sign-in:hover {
+    text-decoration: underline;
+}
+@media (max-width: 991px) {
+    .reservation-area .reservation-right {
+        margin-top: 50px;
+    }
+}
+
+.section-gap {
+    padding: 120px 0;
+    /*height:100%;*/
+}
+
+.navbar {
+    background-color: #93E9BE;;
+}
+
+.navbar .top-links {
+    float: right;
+    display: block;
+    color: #93E9BE;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.intro-text {
+    font-size: 17px;
+}
+
+.full-height{
+    height:100%;
+}
+
+.Select-placeholder {
+    font-size: smaller;
+}

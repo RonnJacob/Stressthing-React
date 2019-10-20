@@ -8,9 +8,11 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExclamation } from '@fortawesome/free-solid-svg-icons'
 import {Redirect} from 'react-router-dom'
+import {getFromStorage} from '../../utils/storage';
 import {setInStorage} from "../../utils/storage";
 import RegularUserServices from "../../services/RegularUserServices";
-
+import StresserServices from "../../services/StresserServices";
+import FitnessServices from "../../services/FitnessServices";
 
 const customStyles = {
 
@@ -44,9 +46,11 @@ const customStyles = {
 class StressLandingPage extends React.Component{
     constructor(props){
         super(props);
+        const obj =  getFromStorage('project_april');
         this.state = {
             errors: [],
-            user: {},
+            user: obj.user[0],
+            userId: obj.user[0]._id,
             toHome: false,
             token: '',
             signInError: ''
@@ -54,6 +58,15 @@ class StressLandingPage extends React.Component{
 {/*        this.userServices = new UserServices();
   */}
         this.regularUserServices = new RegularUserServices();
+        this.fitnessServices = new FitnessServices();
+        this.fitnessServices.findLatestFitnessData(obj.user[0]._id)
+                            .then(res=> {
+                              if(res!==undefined &&res.length!=0){
+                                if(res[0].currentHeartRate > res[0].restingHeartRate+20){
+                                  alert('You seem stressed. Please log your stress.');
+                                }
+                              }
+                            });
 {/*        this.chefServices = new ChefServices();
         this.nutritionistServices = new NutritionistServices();
   */}

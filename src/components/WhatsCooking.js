@@ -81,7 +81,7 @@ class WhatsCooking extends Component{
             <div id="landing-page" style={{height: '100%'}}>
                 <Router>
                     <Switch>
-                    <Route path='/' exact component={LandingPage}/>
+                    <Route path='/' exact component={LoginPage}/>
                     <Route path='/explore-recipes' component={ExploreRecipes}/>
 
                     <Route path='/user/:userId/favorites' component={(props) =>

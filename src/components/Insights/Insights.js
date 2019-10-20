@@ -8,8 +8,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExclamation } from '@fortawesome/free-solid-svg-icons'
 import {Redirect} from 'react-router-dom'
+import {getFromStorage} from "../../utils/storage"
 import {setInStorage} from "../../utils/storage"
 import RegularUserServices from "../../services/RegularUserServices"
+import StresserServices from "../../services/StresserServices";
 import {Pie} from 'react-chartjs-2'
 
 import {Component} from 'react';
@@ -47,16 +49,34 @@ const customStyles = {
 class Insights extends Component{
     constructor(props){
         super(props);
+        const obj =  getFromStorage('project_april');
         this.state = {
             errors: [],
+            user: obj.user[0],
+            userId: obj.user[0]._id,
             user: {},
             toHome: false,
             token: '',
-            signInError: ''
+            signInError: '',
+            stressLabels: [],
+            stressDataValues: []
+
         };
 {/*        this.userServices = new UserServices();
   */}
         this.regularUserServices = new RegularUserServices();
+        this.stresserServices = new StresserServices();
+        this.stresserServices.findStresser(obj.user[0]._id).then(res=>{
+          if(res!==undefined || res.length !== 0){
+            for (var i = 0; i < res.length; i++) {
+                this.setState({stressLabels: [...this.state.stressLabels, res[i].cause]});
+                this.setState({stressDataValues: [...this.state.stressDataValues, res[i].count]});
+            }
+            console.log(this.state.stressLabels);
+            console.log(this.state.stressDataValues);
+          }
+
+        });
 {/*        this.chefServices = new ChefServices();
         this.nutritionistServices = new NutritionistServices();
   */}
@@ -109,53 +129,23 @@ class Insights extends Component{
         const { selectedOption } = this.state;
         library.add(faExclamation);
         return(
-        <div>
-          <Pie
-        data={{
-
-            labels : ['low', 'average', 'high'],
-            datasets : [{
-                data : [1000, 4000, 9000],
-                backgroundColor : ['red', 'blue', 'yellow']
-            }]
-            }}
-          height = '50%'
-
-        />
             <div className="full-height">
-                <div className="navbar top-links pt-5">
+                <div className="navbar top-links pt-5" style={{height: "inherit"}}>
                     <div className="container">
-                        <h1 class="text-white col-sm-5">StressThing</h1>
+                        <h1 class="text-white" style={{textAlign: 'centre'}}>Insights</h1>
+                        <Pie
+                      data={{
 
-                        <a className="primary-btn text-uppercase m-20" style={{color: 'white'}}
-                           id="dashboard" href="../landingp" onClick={this.getInsight}>Dashboard
-                        </a>
+                          labels : this.state.stressLabels,
+                          datasets : [{
+                              data : this.state.stressDataValues
+                          }]
+                          }}
 
-                        <a className="primary-btn text-uppercase m-20" style={{color: 'white'}}
-                           id="logout" href="../login" onClick={this.registerUser}>Logout
-                        </a>
+                      />
 
                     </div>
                 </div>
-
-
-                <section className="reservation-area section-gap relative">
-
-                    <div className="container">
-                        <div className="row justify-content-center align-bottom">
-                            <h1 className="text-white mb-3">Welcome!</h1>
-                        </div>
-                        <div className="row justify-content-center mt-2">
-                            <h5 className="text-white">What's StressThing you out today?</h5>
-                        </div>
-                        <div className="row justify-content-center mt-5">
-                            <a className="primary-btn m-20" style={{color: 'white'}}
-                               id="stressor-log" href="../log" onClick={this.registerUser}>Log Your Stressors
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            </div>
             </div>
         );
     };

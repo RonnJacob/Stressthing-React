@@ -1,10 +1,10 @@
 import {FETCH_URL} from "../utils/constants";
 
-export default class fitnessServices {
+export default class FitnessServices {
   addFitness = (fitness) => {
     return fetch(FETCH_URL + 'fitness', {
         method: 'post',
-        body: JSON.stringify(regularUser),
+        body: JSON.stringify(fitness),
         headers: {
             'content-type': 'application/json'
         },
@@ -13,7 +13,14 @@ export default class fitnessServices {
   }
 
   findFitnessData= (userId) => {
-    return fetch(FETCH_URL + 'fitness/' + userID+'/fitnessdata')
+    return fetch(FETCH_URL + 'fitness/' + userId+'/fitnessdata')
+        .then(function(response){
+            return response.json();
+        });
+  }
+
+  findLatestFitnessData = (userId) => {
+    return fetch(FETCH_URL + 'fitness/' + userId+'/latest')
         .then(function(response){
             return response.json();
         });
