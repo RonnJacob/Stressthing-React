@@ -91,6 +91,24 @@ class RegisterPage extends React.Component{
             else{
                 this.state.user['password'] = document.getElementById('register_password').value;
                 this.state.user['password'] = document.getElementById('register_verify_password').value;
+                this.regularUserServices.registerRegularUser(this.state.user)
+                        .then(this.userServices.loginUser(this.state.user.username, this.state.user.password)
+                            .then(json => {
+                                if (json.success) {
+                                    setInStorage('project_april', { token: json.token , user: json.user});
+                                    this.setState({
+                                        token: json.token,
+                                        user: json.user[0],
+                                        toHome: true
+                                    });
+                                    window.location.href = `/landingp`;
+                                } else {
+                                    this.setState({
+                                        toHome: false
+                                    });
+                                }
+                            })
+                        );
             }
         });
     };
