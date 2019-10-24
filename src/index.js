@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import WhatsCooking from "./components/WhatsCooking";
+import StressThing from "./components/StressThing";
 
 ReactDOM.render(
 
-    <WhatsCooking/>, document.getElementById('root'));
+    <StressThing/>, document.getElementById('root'));
 
 serviceWorker.unregister();

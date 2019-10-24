@@ -77,9 +77,6 @@ class Insights extends Component{
           }
 
         });
-{/*        this.chefServices = new ChefServices();
-        this.nutritionistServices = new NutritionistServices();
-  */}
     }
 
 

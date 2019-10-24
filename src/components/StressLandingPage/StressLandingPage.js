@@ -67,9 +67,7 @@ class StressLandingPage extends React.Component{
                                 }
                               }
                             });
-{/*        this.chefServices = new ChefServices();
-        this.nutritionistServices = new NutritionistServices();
-  */}
+
     }
 
 

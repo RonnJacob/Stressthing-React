@@ -52,12 +52,9 @@ class InsightsGraph extends React.Component{
             token: '',
             signInError: ''
         };
-{/*        this.userServices = new UserServices();
-  */}
+
         this.regularUserServices = new RegularUserServices();
-{/*        this.chefServices = new ChefServices();
-        this.nutritionistServices = new NutritionistServices();
-  */}
+
     }
 
 

@@ -59,9 +59,7 @@ class Log extends React.Component{
   */}
         this.regularUserServices = new RegularUserServices();
         this.stresserServices = new StresserServices();
-{/*        this.chefServices = new ChefServices();
-        this.nutritionistServices = new NutritionistServices();
-  */}
+
     }
 
 
